@@ -165,10 +165,10 @@ public class FormBankTransferObject {
         selectYourSymbolForm(symbol);
         enterTheCommitmentIdentifier(idType);
         completeTheSettlementPeriod(year,period,month,day);
-        enterTheOfficeName(nameOffice);
-        enterAccountNumberOfTheTaxOffice(accountNumber);
         enterNameOfThePayer(nameOfThePayer);
         clickToAdditionalTextBoxPayer();
+        enterTheOfficeName(nameOffice);
+        enterAccountNumberOfTheTaxOffice(accountNumber);
         enterTheAddressPayer(address);
         enterTheCityAddressPayer(city);
         enterDocumentNumber(number);
