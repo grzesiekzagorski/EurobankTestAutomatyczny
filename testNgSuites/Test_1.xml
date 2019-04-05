@@ -1,0 +1,59 @@
+<suite name="Test_1">
+    <parameter name="driverPath" value="src\\main\\resources\\Geckodriver.exe"/>
+    <parameter name="url" value="http://demo.eurobank.pl/"/>
+    <parameter name="excelPath" value="reports/eurobankDemoUS.xlsx"/>
+    <parameter name="id" value="12345678"/>
+    <parameter name="password" value="87654321"/>
+    <parameter name="account" value="[KO] konto na życie [13 159,20 PLN] 4141...0000"/>
+    <parameter name="symbol" value="PIT28"/>
+    <parameter name="idType" value="Paszport"/>
+    <parameter name="year" value="1998"/>
+    <parameter name="period" value="J - Dzień"/>
+    <parameter name="month" value="08"/>
+    <parameter name="day" value="12"/>
+    <parameter name="nameOffice" value="Urząd Skarbowy we Wrocławiu-Krzyki"/>
+    <parameter name="accountNumber" value="02 1090 2402 0000 0001 0071 4689"/>
+    <parameter name="nameOfThePayer" value="Jan Kowalski"/>
+    <parameter name="address" value="ul. Grochowska 13/21"/>
+    <parameter name="city" value="50-440 Warszawa"/>
+    <parameter name="number" value="HH6661728"/>
+    <parameter name="commitmentId" value="FV201809"/>
+    <parameter name="price" value="245,00"/>
+    <parameter name="token" value="111111"/>
+
+    <test name="Wykonaj transakcję">
+        <classes>
+            <class name="pl.b2b.net.eurobank.cfg.CfgTest">
+                <methods>
+                    <include name="setUp"/>
+                    <include name="openSite"/>
+                </methods>
+            </class>
+            <class name="pl.b2b.net.eurobank.pages.loginPage.LoginPageTest">
+                <methods>
+                    <include name="logInToTheWebsiteTest"/>
+                </methods>
+            </class>
+            <class name="pl.b2b.net.eurobank.pages.homePage.HomePageTest">
+                <methods>
+                    <include name="goToTheTransferFormTest"/>
+                </methods>
+            </class>
+            <class name="pl.b2b.net.eurobank.pages.formBankTransferPage.FormBankTransferTest">
+                <methods>
+                    <include name="fillTheTransferFormTest"/>
+                </methods>
+            </class>
+            <class name="pl.b2b.net.eurobank.pages.reportPage.ReportPageTest">
+                <methods>
+                    <include name="writeDataReportToExcelFile"/>
+                </methods>
+            </class>
+            <class name="pl.b2b.net.eurobank.pages.logoutPage.LogoutPageTest">
+                <methods>
+                    <include name="logOutFromServiceEurobank"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
